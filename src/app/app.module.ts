@@ -9,6 +9,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { DpLogoComponent } from './dp-logo/dp-logo.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProfileComponent } from "./profile/profile.component";
     PortfolioComponent,
     AboutComponent,
     ContactComponent,
+    DpLogoComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: "!" }],
