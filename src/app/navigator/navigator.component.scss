@@ -1,3 +1,7 @@
+* {
+  user-select: none;
+}
+
 .navigator-container {
   position: fixed;
   top: 0;
@@ -6,4 +10,40 @@
   height: 100vh;
   background-color: rgba(#555, .7);
   z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cormorant Garamond', serif;
 }
+
+
+.navLinks {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.navLink {
+  padding: 2rem 0;
+  margin: 1rem 0;
+  width: 40%;
+  min-width: 40rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  background: rgba(#f8f8f8, .5);
+  cursor: pointer;
+  border-radius: .5rem;
+
+  div {
+    color: white;
+  }
+
+}
+
+

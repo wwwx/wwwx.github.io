@@ -1,3 +1,9 @@
 <div class="navigator-container" (click)="onBgClick()" appEscCancellation (appEscCancellation)="onBgClick()">
-
+  <div class="navLinks" @slideIn>
+    <div class="navLink" *ngFor="let nav of navLinks; let isEven = even;"
+       [ngStyle]="{ transform: isEven ? 'translateX(10%)' : 'translateX(-10%)' }"
+    >
+      <div [ngStyle]="{ transform: isEven ? 'translateX(-10%)' : 'translateX(10%)' }">{{ nav.displayName }}</div>
+    </div>
+  </div>
 </div>
