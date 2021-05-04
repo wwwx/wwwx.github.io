@@ -8,6 +8,7 @@ import {
   trigger,
 } from "@angular/animations";
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-navigator",
@@ -71,11 +72,16 @@ export class NavigatorComponent implements OnInit {
   @Output("cancellation")
   cancellation = new EventEmitter();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   onBgClick() {
     this.cancellation.emit();
+  }
+
+  onNavItemClick(e: Event, url: string) {
+    e.stopPropagation();
+    this.router.navigateByUrl(url);
   }
 }
