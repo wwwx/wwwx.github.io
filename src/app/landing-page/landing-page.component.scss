@@ -1,0 +1,58 @@
+@import '../var';
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  overflow: hidden;
+  background-color: $color2;
+  clip-path: ellipse(50vw 40vh at 50% 50%);
+  transform: scale(2) translate(27vw, -18vh) rotate(335deg) ;
+  animation: .8s ease-in-out .2s both leftToRight;
+}
+
+.navbar {
+  width: 100%;
+  color: $off-white;
+  font-size: 2rem;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items {
+  .nav-item {
+    display: inline-block;
+    padding: .2rem 0;
+    margin: .6rem 1rem;
+    user-select: none;
+    cursor: pointer;
+    border-bottom: .3rem solid $green;
+    color: $off-white;
+    text-decoration: none;
+  }
+}
+
+
+@keyframes leftToRight {
+  0% {
+    left: -10%;
+    opacity: .2;
+  }
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
+}
