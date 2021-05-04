@@ -11,6 +11,7 @@ import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { DpLogoComponent } from './dp-logo/dp-logo.component';
 import { NavigatorComponent } from './navigator/navigator.component';
+import { EscCancellationDirective } from './directives/esc-cancellation.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NavigatorComponent } from './navigator/navigator.component';
     ContactComponent,
     DpLogoComponent,
     NavigatorComponent,
+    EscCancellationDirective,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: "!" }],
