@@ -8,5 +8,11 @@ import { Component, OnInit } from "@angular/core";
 export class LandingPageComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  startTadaAnimation = false;
+
+  ngOnInit() {
+    setInterval(() => {
+      this.startTadaAnimation = !this.startTadaAnimation;
+    }, 3000);
+  }
 }

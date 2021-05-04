@@ -7,4 +7,31 @@
       <a [routerLink]="['/profiles']" class="nav-item">Profiles</a>
     </div>
   </div>
+  <div class="container">
+    <!-- What is short bio?
+      Your name
+      Your current job title
+      Your company name or personal branc statement
+      Your hometown
+      your alma mater
+      Your personal and professional goals
+      A relevant achievemen† or accomplishment
+      Your hobbies
+      Your skills and areas of expertise
+    -->
+    <h4 class="short-bio">Developer | Jiayin</h4>
+    <q class="quote">Help others in the way of self-learning</q>
+    <div class="name">
+      <p>Wang Xu</p>
+      <div class="strip"></div>
+    </div>
+    <div (mouseover)="startTadaAnimation = false;" [ngClass]="{'tada-animation': startTadaAnimation}">
+      <button class="special-btn">
+        <span>Expore me</span>
+      </button>
+    </div>
+    <div class="stick">
+      <div class="stick-design"></div>
+    </div>
+  </div>
 </div>
