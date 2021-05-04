@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-landing-page",
@@ -10,9 +10,16 @@ export class LandingPageComponent implements OnInit {
 
   startTadaAnimation = false;
 
+  @Output("ExploreMe")
+  ExploreMe = new EventEmitter();
+
   ngOnInit() {
     setInterval(() => {
       this.startTadaAnimation = !this.startTadaAnimation;
     }, 3000);
+  }
+
+  onExploreMeClick() {
+    this.ExploreMe.emit();
   }
 }

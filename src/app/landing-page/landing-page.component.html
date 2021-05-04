@@ -28,7 +28,7 @@
     </div>
     <div (mouseover)="startTadaAnimation = false;" [ngClass]="{'tada-animation': startTadaAnimation}">
       <button class="special-btn">
-        <span>Expore me</span>
+        <span (click)="onExploreMeClick()">Expore me</span>
       </button>
     </div>
     <div class="stick">
