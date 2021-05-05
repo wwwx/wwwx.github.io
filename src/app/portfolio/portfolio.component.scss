@@ -21,21 +21,59 @@
 
 .portfolio-container {
   padding: 3.5rem .5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: stretch;
   align-items: center;
-  margin: 0 5rem;
+  margin: auto;
   color: white;
   position: relative;
   z-index: 30;
   font-size: 1.8rem;
+  user-select: none;
+
+  & > * {
+    display: inline-block;
+    padding: 1rem 2rem;
+    transition: all .3s ease-in-out;
+  }
+
+  @media (max-width: 74rem) {
+    & {
+      flex-direction: column;
+    }
+  }
 }
 
 .portfolio-area {
   position: relative;
   z-index: 50;
+
+}
+
+.portfolio-selection {
+  > h1 {
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    margin: 1rem auto;
+    text-align: center;
+    font-weight: normal;
+    color: white;
+  }
+
+}
+
+.portfolio-selection__fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: $color2;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0 0 0 / 40%);
+
 }

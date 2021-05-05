@@ -1,12 +1,18 @@
 <div class="portfolio-bg">
   <div class="portfolio-container">
-    <div class="portfolio-header">
-      <app-dp-logo></app-dp-logo>
+    <div #portfolioHeaderArea class="portfolio-header">
+      <app-dp-logo size="12rem" borderWidth="3px"></app-dp-logo>
       <app-typing [text]="typingText" time="2000" delay="1000"></app-typing>
     </div>
-    <div class="portfolio-area">
+    <div #portfolioArea class="portfolio-area">
       <div class="back-icon" (click)="onBackBtnClick()">
         <app-icon-back></app-icon-back>
+      </div>
+      <div #portfolioSelectionArea class="portfolio-selection" [ngClass]="{ 'portfolio-selection__fixed': setFixedPosition }">
+        <h1>PORTFOLIO</h1>
+      </div>
+      <div style="height: 1000px;">
+
       </div>
     </div>
   </div>
