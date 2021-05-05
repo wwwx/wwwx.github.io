@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnInit } from "@angular/core";
 import { interval } from "rxjs";
 import { take } from "rxjs/operators";
 
@@ -7,7 +7,7 @@ import { take } from "rxjs/operators";
   templateUrl: "./typing.component.html",
   styleUrls: ["./typing.component.scss"],
 })
-export class TypingComponent implements OnInit {
+export class TypingComponent implements OnInit, OnChanges {
   @Input("text") private text = "";
   @Input("time") private time = 2000;
   @Input("delay") private delay = 500;
@@ -23,6 +23,13 @@ export class TypingComponent implements OnInit {
     setTimeout(() => {
       this.startTyping();
     }, this.delay);
+  }
+
+  ngOnChanges(changes) {
+    if (!changes.text.firstChange) {
+      this.charList = [];
+      this.startTyping();
+    }
   }
 
   startTyping() {
