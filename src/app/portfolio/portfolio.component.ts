@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 export class PortfolioComponent implements OnInit {
   private typingText = "Hey, sort my projects by clicking the categories.";
   private setFixedPosition = false;
+  private logoStyle: {};
 
   @ViewChild("portfolioSelectionArea", { static: true })
   portfolioSelectionAreaRef!: any;
@@ -27,24 +28,20 @@ export class PortfolioComponent implements OnInit {
 
   @HostListener("window:scroll")
   onWindowScroll() {
-    // console.log(window.scrollY);
-    // const portfolioSelectionArea: HTMLElement = this.portfolioSelectionAreaRef
-    //   .nativeElement;
-    // const portfolioHeaderArea: HTMLElement = this.portfolioHeaderAreaRef
-    //   .nativeElement;
     const portfolioArea: HTMLElement = this.portfolioAreaRef.nativeElement;
-
-    console.log(
-      // portfolioSelectionArea.offsetTop,
-      // portfolioHeaderArea.scrollHeight,
-      window.scrollY,
-      portfolioArea.offsetTop
-    );
+    const factor = +Math.max(
+      1 - window.scrollY / portfolioArea.offsetTop
+    ).toFixed(2);
+    // console.log(factor, window.scrollY, portfolioArea.offsetTop);
 
     if (window.scrollY > portfolioArea.offsetTop) {
       this.setFixedPosition = true;
     } else {
       this.setFixedPosition = false;
+      this.logoStyle = {
+        opacity: factor,
+        transform: `scale(${factor})`,
+      };
     }
   }
 }
