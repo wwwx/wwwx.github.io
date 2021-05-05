@@ -12,6 +12,8 @@ import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { NavigatorComponent } from "./navigator/navigator.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { IconBackComponent } from './ui/icon-back/icon-back.component';
+import { TypingComponent } from './typing/typing.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ProfileComponent } from "./profile/profile.component";
     DpLogoComponent,
     NavigatorComponent,
     EscCancellationDirective,
+    IconBackComponent,
+    TypingComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: "!" }],
