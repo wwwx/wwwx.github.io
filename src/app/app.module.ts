@@ -14,6 +14,7 @@ import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { IconBackComponent } from './ui/icon-back/icon-back.component';
 import { TypingComponent } from './typing/typing.component';
+import { KeySkillBtnsComponent } from './key-skill-btns/key-skill-btns.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TypingComponent } from './typing/typing.component';
     EscCancellationDirective,
     IconBackComponent,
     TypingComponent,
+    KeySkillBtnsComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: "!" }],

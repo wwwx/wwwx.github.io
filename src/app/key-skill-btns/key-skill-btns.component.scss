@@ -1,0 +1,56 @@
+@import '../var';
+
+$key_skill_padding: .4rem 2rem;
+$key_skill_margin: .6rem;
+
+.key-skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+}
+
+.key-skill {
+  border: 2px solid $color3;
+  background-color: $color3;
+  color: white;
+  font-size: 1.6rem;
+  outline: none;
+  margin: $key_skill_margin;
+  padding: $key_skill_padding;
+  line-height: 1.5;
+  border-radius: 30rem;
+  box-shadow: .4rem .5rem .9rem rgba(0, 0, 0, .25);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    padding: .4rem 2.8rem;
+    margin: .6rem 1.2rem;
+
+    @media screen and (max-width: 640px) {
+      padding: $key_skill_padding;
+      margin: $key_skill_margin;
+    }
+  }
+
+  &--disabled {
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 2px;
+      background-color: $color3;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 50%;
+      transform: rotateZ(-14deg);
+    }
+  }
+}
+
+

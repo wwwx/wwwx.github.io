@@ -1,0 +1,7 @@
+<div class="key-skills">
+  <button class="key-skill"
+  *ngFor="let keySkill of keySkills;"
+  [ngClass]="{ 'key-skill--disabled': !keySkill.isSelected }"
+  (click)="onKeySkillBtnClick(keySkill.displayName)"
+  >{{ keySkill.displayName }}</button>
+</div>
