@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { tagData } from "../utils/tags.data";
 import { Tag } from "../utils/tags.model";
 
@@ -7,6 +7,8 @@ import { Tag } from "../utils/tags.model";
 })
 export class TagsService {
   tags: Tag[];
+
+  onTagUpdate = new EventEmitter();
 
   constructor() {
     this.tags = tagData;
@@ -17,5 +19,6 @@ export class TagsService {
     const currentTag = this.tags.find((tag) => tag.displayName === tagName);
     if (selectedNum <= 1 && currentTag.isSelected) return;
     currentTag.isSelected = !currentTag.isSelected;
+    this.onTagUpdate.emit();
   }
 }

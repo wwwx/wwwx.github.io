@@ -15,6 +15,8 @@ import { ProfileComponent } from "./profile/profile.component";
 import { IconBackComponent } from './ui/icon-back/icon-back.component';
 import { TypingComponent } from './typing/typing.component';
 import { KeySkillBtnsComponent } from './key-skill-btns/key-skill-btns.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { KeySkillBtnsComponent } from './key-skill-btns/key-skill-btns.component
     IconBackComponent,
     TypingComponent,
     KeySkillBtnsComponent,
+    ProjectCardComponent,
+    ProjectsComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: "!" }],

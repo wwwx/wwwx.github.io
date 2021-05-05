@@ -1,0 +1,3 @@
+<div class="project-container" [@slideIn]="projects?.length" (@slideIn.done)="renderProjects()">
+  <app-project-card *ngFor="let i of projects" class="project-card"></app-project-card>
+</div>
