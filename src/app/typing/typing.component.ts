@@ -12,7 +12,7 @@ export class TypingComponent implements OnInit, OnChanges {
   @Input("time") private time = 2000;
   @Input("delay") private delay = 500;
 
-  private charList = [];
+  charList = [];
 
   constructor() {}
 

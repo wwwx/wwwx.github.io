@@ -7,9 +7,9 @@ import { Router } from "@angular/router";
   styleUrls: ["./portfolio.component.scss"],
 })
 export class PortfolioComponent implements OnInit {
-  private typingText = "Hey, sort my projects by clicking the categories.";
-  private setFixedPosition = false;
-  private logoStyle: {};
+  typingText = "Hey, sort my projects by clicking the categories.";
+  setFixedPosition = false;
+  logoStyle: {};
 
   @ViewChild("portfolioSelectionArea", { static: true })
   portfolioSelectionAreaRef!: any;
