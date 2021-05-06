@@ -23,4 +23,8 @@
   box-shadow: -5px 9px 20px rgba(#000, .3);
   overflow-x: hidden;
   overflow-y: scroll;
+
+  @media (max-width: 640px) {
+    width: 95vw;
+  }
 }

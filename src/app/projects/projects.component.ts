@@ -1,16 +1,27 @@
+import { animateChild, query, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { slideInAnimation2 } from ".././animations";
 import { ProjectsService } from "../service/projects.service";
 import { TagsService } from "../service/tags.service";
+import { Project } from "../utils/project.model";
 
 @Component({
   selector: "app-projects",
   templateUrl: "./projects.component.html",
   styleUrls: ["./projects.component.scss"],
-  animations: [slideInAnimation2],
+  animations: [
+    slideInAnimation2,
+    trigger("animateChildren", [
+      transition("* => *", [
+        query("@*, :enter", [animateChild()], { optional: true }),
+        query("@*, :leave", [animateChild()], { optional: true }),
+      ]),
+    ]),
+  ],
 })
 export class ProjectsComponent implements OnInit {
   projects = [];
+  selectedProject!: Project;
   constructor(
     private tagsService: TagsService,
     private projectService: ProjectsService
@@ -37,5 +48,9 @@ export class ProjectsComponent implements OnInit {
           false
         );
     });
+  }
+
+  onProjectCardClick(data) {
+    this.selectedProject = data.project;
   }
 }
