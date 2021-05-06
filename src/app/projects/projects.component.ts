@@ -1,76 +1,20 @@
-import {
-  animate,
-  keyframes,
-  query,
-  stagger,
-  style,
-  transition,
-  trigger,
-} from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
+import { slideInAnimation2 } from ".././animations";
+import { ProjectsService } from "../service/projects.service";
 import { TagsService } from "../service/tags.service";
-import { tagData } from "../utils/tags.data";
 
 @Component({
   selector: "app-projects",
   templateUrl: "./projects.component.html",
   styleUrls: ["./projects.component.scss"],
-  animations: [
-    trigger("slideIn", [
-      transition("* => *", [
-        query(":enter", style({ transform: "translateY(-25%)", opacity: 0 }), {
-          optional: true,
-        }),
-        query(":leave", style({ transform: "translateY(0%)", opacity: 1 }), {
-          optional: true,
-        }),
-        query(
-          ":enter",
-          [
-            stagger("0.05s", [
-              animate(
-                "0.2s ease-out",
-                keyframes([
-                  style({
-                    transform: "translateY(-25%)",
-                    opacity: 0,
-                    offset: 0,
-                  }),
-                  style({ transform: "translateY(0%)", opacity: 1, offset: 1 }),
-                ])
-              ),
-            ]),
-          ],
-          { optional: true }
-        ),
-        query(
-          ":leave",
-          [
-            stagger("0.05s", [
-              animate(
-                "0.2s ease-in",
-                keyframes([
-                  style({ transform: "translateY(0%)", offset: 0 }),
-                  style({
-                    transform: "translateY(-25%)",
-                    opacity: 0,
-                    offset: 1,
-                  }),
-                ])
-              ),
-            ]),
-          ],
-          { optional: true }
-        ),
-      ]),
-    ]),
-  ],
+  animations: [slideInAnimation2],
 })
 export class ProjectsComponent implements OnInit {
   projects = [];
-  constructor(private tagsService: TagsService) {}
-
-  randomNum = 0;
+  constructor(
+    private tagsService: TagsService,
+    private projectService: ProjectsService
+  ) {}
 
   ngOnInit() {
     this.renderProjects();
@@ -84,8 +28,14 @@ export class ProjectsComponent implements OnInit {
   }
 
   renderProjects() {
-    this.projects = tagData.filter((p) => {
-      return p.isSelected;
+    this.projects = this.projectService.getProjects().filter((project) => {
+      return this.tagsService.tags
+        .filter((tag) => tag.isSelected)
+        .reduce(
+          (prev, tag) =>
+            prev || project.tags.indexOf(tag.displayName.toLowerCase()) > -1,
+          false
+        );
     });
   }
 }

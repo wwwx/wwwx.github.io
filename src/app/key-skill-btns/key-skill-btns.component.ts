@@ -20,4 +20,12 @@ export class KeySkillBtnsComponent implements OnInit {
     console.log(tagName);
     this.tagsService.toggleSkillSelection(tagName);
   }
+
+  disableIfOneBtn(tag: Tag) {
+    const targetKeySkills = this.keySkills.filter((k) => k.isSelected);
+    return (
+      targetKeySkills.length === 1 &&
+      targetKeySkills[0].displayName === tag.displayName
+    );
+  }
 }
