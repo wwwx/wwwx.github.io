@@ -1,0 +1,30 @@
+.project-details-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 990;
+  background-color: rgba(#000, .4);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.project-details {
+  height: 100vh;
+  width: 75vw;
+  position: relative;
+  z-index: 999;
+  margin-left: auto;
+  margin-right: 0;
+  padding-right: 1.6rem;
+  padding-top: 0;
+  padding-left: 0;
+  background-color: #f2f2f2;
+  box-shadow: -5px 9px 20px rgba(#000, .3);
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @media (max-width: 640px) {
+    width: 95vw;
+  }
+}

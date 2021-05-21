@@ -1,0 +1,33 @@
+$min-height: 18rem;
+$min-width: 20rem;
+
+.card-outer {
+  min-height: $min-height;
+  min-width: $min-width;
+  margin: 1rem;
+  border-radius: .5rem;
+  background-color: white;
+  box-shadow: 6px 6px 15px rgba(#000, .3);
+  cursor: pointer;
+}
+
+.card-container {
+  height: 100%;
+  padding: .6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__header {
+  margin: 1rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
+  font-size: 2.4rem;
+
+}
+
+.card__body {
+  margin: .6rem 0;
+  font-size: 1.6rem;
+  flex: 1;
+}

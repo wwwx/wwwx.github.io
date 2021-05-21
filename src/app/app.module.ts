@@ -12,6 +12,12 @@ import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { NavigatorComponent } from "./navigator/navigator.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { IconBackComponent } from './ui/icon-back/icon-back.component';
+import { TypingComponent } from './typing/typing.component';
+import { KeySkillBtnsComponent } from './key-skill-btns/key-skill-btns.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,12 @@ import { ProfileComponent } from "./profile/profile.component";
     DpLogoComponent,
     NavigatorComponent,
     EscCancellationDirective,
+    IconBackComponent,
+    TypingComponent,
+    KeySkillBtnsComponent,
+    ProjectCardComponent,
+    ProjectsComponent,
+    ProjectDetailsComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: "!" }],
