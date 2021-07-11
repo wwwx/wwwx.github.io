@@ -1,8 +1,8 @@
 <div class="key-skills">
-  <button class="key-skill"
-  *ngFor="let keySkill of keySkills;"
-  [disabled]="disableIfOneBtn(keySkill)"
-  [ngClass]="{ 'key-skill--disabled': !keySkill.isSelected }"
-  (click)="onKeySkillBtnClick(keySkill.displayName)"
+  <button (click)="onKeySkillBtnClick(keySkill.displayName)"
+          *ngFor="let keySkill of keySkills;"
+          [disabled]="disableIfOneBtn(keySkill)"
+          [ngClass]="{ 'key-skill--disabled': !keySkill.isSelected }"
+          class="key-skill"
   >{{ keySkill.displayName }}</button>
 </div>

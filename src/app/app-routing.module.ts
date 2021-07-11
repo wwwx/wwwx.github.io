@@ -1,39 +1,39 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { AboutComponent } from "./about/about.component";
-import { ContactComponent } from "./contact/contact.component";
-import { PortfolioComponent } from "./portfolio/portfolio.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const APP_ROUTES: Routes = [
   {
-    path: "",
+    path: '',
     component: ProfileComponent,
-    pathMatch: "full",
-    data: { animation: "landing-page" },
+    pathMatch: 'full',
+    data: { animation: 'landing-page' },
   },
   {
-    path: "portfolio",
+    path: 'portfolio',
     component: PortfolioComponent,
-    data: { animation: "portfolio" },
+    data: { animation: 'portfolio' },
   },
   {
-    path: "about",
+    path: 'about',
     component: AboutComponent,
-    data: { animation: "about" },
+    data: { animation: 'about' },
   },
   {
-    path: "contact",
+    path: 'contact',
     component: ContactComponent,
-    data: { animation: "contact" },
+    data: { animation: 'contact' },
   },
   {
-    path: "profiles",
-    redirectTo: "/contact",
+    path: 'profiles',
+    redirectTo: '/contact',
   },
   {
-    path: "**",
-    redirectTo: "/",
+    path: '**',
+    redirectTo: '/',
   },
 ];
 
@@ -41,4 +41,5 @@ const APP_ROUTES: Routes = [
   imports: [RouterModule.forRoot(APP_ROUTES, { useHash: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

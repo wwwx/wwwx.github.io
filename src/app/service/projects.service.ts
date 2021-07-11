@@ -1,11 +1,12 @@
-import { Injectable } from "@angular/core";
-import { ALL_PROJECT_DATA } from "../utils/project-data";
+import { Injectable } from '@angular/core';
+import { ALL_PROJECT_DATA } from '../utils/project-data';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ProjectsService {
-  constructor() {}
+  constructor() {
+  }
 
   getProjects() {
     return ALL_PROJECT_DATA;

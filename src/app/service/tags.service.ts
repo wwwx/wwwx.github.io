@@ -1,9 +1,9 @@
-import { EventEmitter, Injectable } from "@angular/core";
-import { tagData } from "../utils/tags.data";
-import { Tag } from "../utils/tags.model";
+import { EventEmitter, Injectable } from '@angular/core';
+import { tagData } from '../utils/tags.data';
+import { Tag } from '../utils/tags.model';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class TagsService {
   tags: Tag[];
@@ -17,7 +17,9 @@ export class TagsService {
   toggleSkillSelection(tagName: string) {
     const selectedNum = this.tags.filter((tag) => tag.isSelected).length;
     const currentTag = this.tags.find((tag) => tag.displayName === tagName);
-    if (selectedNum <= 1 && currentTag.isSelected) return;
+    if (selectedNum <= 1 && currentTag.isSelected) {
+      return;
+    }
     currentTag.isSelected = !currentTag.isSelected;
     this.onTagUpdate.emit();
   }

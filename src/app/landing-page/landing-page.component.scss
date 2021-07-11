@@ -28,7 +28,7 @@
   display: block;
   overflow: hidden;
   background-color: $color2;
-  clip-path: ellipse(50vw 40vh at 50% 50%);
+  clip-path: ellipse(50vw 40vh);
   transform: scale(2) translate(27vw, -18vh) rotate(335deg) ;
   animation: .8s ease-in-out .2s both leftToRight;
 }

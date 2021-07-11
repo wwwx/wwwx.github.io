@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { TagsService } from "../service/tags.service";
-import { Tag } from "../utils/tags.model";
+import { Component, OnInit } from '@angular/core';
+import { TagsService } from '../service/tags.service';
+import { Tag } from '../utils/tags.model';
 
 @Component({
-  selector: "app-key-skill-btns",
-  templateUrl: "./key-skill-btns.component.html",
-  styleUrls: ["./key-skill-btns.component.scss"],
+  selector: 'app-key-skill-btns',
+  templateUrl: './key-skill-btns.component.html',
+  styleUrls: ['./key-skill-btns.component.scss'],
 })
 export class KeySkillBtnsComponent implements OnInit {
   keySkills: Tag[] = [];
@@ -14,10 +14,10 @@ export class KeySkillBtnsComponent implements OnInit {
     this.keySkills = this.tagsService.tags;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onKeySkillBtnClick(tagName: string) {
-    console.log(tagName);
     this.tagsService.toggleSkillSelection(tagName);
   }
 

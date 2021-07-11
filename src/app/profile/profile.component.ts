@@ -1,14 +1,14 @@
-import { animateChild, query, transition, trigger } from "@angular/animations";
-import { Component, OnInit } from "@angular/core";
+import { animateChild, query, transition, trigger } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-profile",
-  templateUrl: "./profile.component.html",
-  styleUrls: ["./profile.component.scss"],
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss'],
   animations: [
-    trigger("animate", [
-      transition("* => *", [
-        query(":enter, :leave", [animateChild()], {
+    trigger('animate', [
+      transition('* => *', [
+        query(':enter, :leave', [animateChild()], {
           optional: true,
         }),
       ]),
@@ -18,7 +18,9 @@ import { Component, OnInit } from "@angular/core";
 export class ProfileComponent implements OnInit {
   showNavigationMenu = false;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

@@ -1,17 +1,17 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: "app-landing-page",
-  templateUrl: "./landing-page.component.html",
-  styleUrls: ["./landing-page.component.scss"],
+  selector: 'app-landing-page',
+  templateUrl: './landing-page.component.html',
+  styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
-  constructor() {}
-
   startTadaAnimation = false;
-
-  @Output("ExploreMe")
+  @Output()
   ExploreMe = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
     setInterval(() => {
