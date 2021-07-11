@@ -1,5 +1,6 @@
 import { animate, keyframes, style, transition, trigger, } from '@angular/animations';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Project } from '../utils/project.model';
 
 @Component({
   selector: 'app-project-details',
@@ -32,6 +33,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ProjectDetailsComponent implements OnInit {
   @Output() cancellation = new EventEmitter();
+  @Input() project: Project;
 
   constructor() {
   }

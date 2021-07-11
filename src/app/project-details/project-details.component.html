@@ -1,5 +1,21 @@
-<div class="project-details-container" (appEscCancellation)="onCancellation()" (click)="onCancellation()">
-  <div class="project-details" @slideIn>
-    project-details works!
+<div (appEscCancellation)="onCancellation()" (click)="onCancellation()" class="project-details-container">
+  <div @slideIn class="project-details">
+    <div class="project-details-header">
+      <span class="project-close">&times;</span>
+      <h4 class="project-title">{{ project.name }}</h4>
+    </div>
+    <div class="project-content">
+      <p class="project-decription">{{ project.description }}</p>
+      <div class="project-links">
+        <div *ngIf="project.projectLink">
+          <h4>Project Link:</h4>
+          <a class="project-link" [href]="project.projectLink" target="_blank">{{ project.projectLink }}</a>
+        </div>
+        <div *ngIf="project.liveUrl">
+          <h4>Live Url:</h4>
+          <a class="project-link" [href]="project.liveUrl">{{ project.liveUrl }}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

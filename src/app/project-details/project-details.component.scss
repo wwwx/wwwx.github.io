@@ -1,3 +1,4 @@
+@import "../var";
 .project-details-container {
   position: fixed;
   top: 0;
@@ -27,4 +28,57 @@
   @media (max-width: 640px) {
     width: 95vw;
   }
+}
+
+.project-details-header {
+  position: fixed;
+  width: inherit;
+  background: inherit;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 20px rgba(#000000, .2);
+
+
+}
+
+.project-close {
+  font-size: 5rem;
+  color: $color1;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: .9rem;
+}
+
+.project-title {
+  padding: 1rem;
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.project-content {
+  width: 80%;
+  margin: auto;
+  margin-top: 12rem;
+  padding-top: 1.5rem;
+  font-size: 1.8rem;
+}
+
+
+.project-links {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  h4 {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+}
+
+.project-link {
+  color: $green;
+  text-decoration: none;
 }
